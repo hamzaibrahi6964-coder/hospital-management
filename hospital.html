@@ -1,1 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MediCare Pro Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+<body class="dashboard-body">
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-logo">
+
+                <img src="assets/icons/logo.svg" alt="Logo">
+
+            </div>
+
+            <div class="sidebar-title">
+
+                <h3>MediCare Pro</h3>
+
+                <span>Hospital ERP</span>
+
+            </div>
+
+        </div>
+
+        <ul class="sidebar-menu">
+
+            <li class="active">
+                <i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span>
+            </li>
+
+            <li>
+                <i data-lucide="users"></i>
+                <span>Patients</span>
+            </li>
+
+            <li>
+                <i data-lucide="stethoscope"></i>
+                <span>Doctors</span>
+            </li>
+
+            <li>
+                <i data-lucide="calendar-days"></i>
+                <span>Appointments</span>
+            </li>
+
+            <li>
+                <i data-lucide="flask-conical"></i>
+                <span>Laboratory</span>
+            </li>
+
+            <li>
+                <i data-lucide="pill"></i>
+                <span>Pharmacy</span>
+            </li>
+
+            <li>
+                <i data-lucide="wallet"></i>
+                <span>Billing</span>
+            </li>
+
+            <li>
+                <i data-lucide="bed"></i>
+                <span>Wards</span>
+            </li>
+
+            <li>
+                <i data-lucide="bar-chart-3"></i>
+                <span>Reports</span>
+            </li>
+
+            <li>
+                <i data-lucide="settings"></i>
+                <span>Settings</span>
+            </li>
+
+        </ul>
+
+        <div class="sidebar-footer">
+
+            <button id="toggleSidebar">
+
+                <i data-lucide="panel-left-close"></i>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <!-- Navbar -->
+
+        <nav class="topbar">
+
+            <div class="search-box">
+
+                <i data-lucide="search"></i>
+
+                <input
+                type="text"
+                placeholder="Search patients, doctors, appointments...">
+
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="icon-btn">
+
+                    <i data-lucide="bell"></i>
+
+                </button>
+
+                <button class="icon-btn">
+
+                    <i data-lucide="settings"></i>
+
+                </button>
+
+                <div class="profile">
+
+                    <div class="avatar">
+
+                        A
+
+                    </div>
+
+                    <div>
+
+                        <h4>Administrator</h4>
+
+                        <span>Hospital Admin</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        <!-- Welcome -->
+
+        <section class="welcome-section">
+
+            <h1>Welcome Back 👋</h1>
+
+            <p>
+                Manage patients, appointments, billing and hospital operations from one place.
+            </p>
+
+        </section>
+
+        <!-- KPI Cards -->
+
+        <section class="cards-grid">
+
+            <div class="kpi-card">
+
+                <h3>Total Patients</h3>
+
+                <h2>1,245</h2>
+
+                <span>+12% this month</span>
+
+            </div>
+
+            <div class="kpi-card">
+
+                <h3>Doctors</h3>
+
+                <h2>85</h2>
+
+                <span>+3 new doctors</span>
+
+            </div>
+
+            <div class="kpi-card">
+
+                <h3>Appointments</h3>
+
+                <h2>214</h2>
+
+                <span>Today</span>
+
+            </div>
+
+            <div class="kpi-card">
+
+                <h3>Revenue</h3>
+
+                <h2>₦4.2M</h2>
+
+                <span>This month</span>
+
+            </div>
+
+        </section>
+
+        <!-- Content Grid -->
+
+        <section class="content-grid">
+
+            <div class="panel">
+
+                <h3>Recent Patients</h3>
+
+                <p>No patient records yet.</p>
+
+            </div>
+
+            <div class="panel">
+
+                <h3>Today's Appointments</h3>
+
+                <p>No appointments scheduled.</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+
+lucide.createIcons();
+
+const sidebar =
+document.getElementById("sidebar");
+
+const toggleBtn =
+document.getElementById("toggleSidebar");
+
+toggleBtn.addEventListener(
+
+"click",
+
+()=>{
+
+sidebar.classList.toggle("collapsed");
+
+}
+
+);
+
+</script>
+
+</body>
+
+</html>
