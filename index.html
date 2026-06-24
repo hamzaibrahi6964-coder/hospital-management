@@ -32,164 +32,126 @@ src="https://unpkg.com/lucide@latest">
 
 <body>
 
-<div class="login-page">
+<div class="overlay"></div>
 
-<div class="login-card">
+<div class="login-container">
 
-<div class="brand">
+    <div class="login-card">
 
-<div class="logo">
+        <div class="brand">
 
-<img
-src="assets/icons/logo.svg"
-alt="MediCare Pro Logo">
+            <div class="logo">
+                <img src="assets/icons/logo.svg" alt="Logo">
+            </div>
+
+            <h1>MediCare Pro</h1>
+
+            <p>Smart Healthcare Management Platform</p>
+
+        </div>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+
+                <label>Hospital Domain</label>
+
+                <div class="input-box">
+
+                    <i data-lucide="globe"></i>
+
+                    <input
+                    type="text"
+                    id="hospitalDomain"
+                    placeholder="e.g. royalcare">
+
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Email</label>
+
+                <div class="input-box">
+
+                    <i data-lucide="user"></i>
+
+                    <input
+                    type="email"
+                    id="email"
+                    placeholder="e.g. admin@royalcare.com">
+
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Password</label>
+
+                <div class="input-box">
+
+                    <i data-lucide="lock"></i>
+
+                    <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password">
+
+                </div>
+
+            </div>
+
+            <div class="remember">
+
+                <label>
+
+                    <input type="checkbox">
+
+                    Remember Me
+
+                </label>
+
+                <a href="#">Forgot Password?</a>
+
+            </div>
+
+            <button
+            type="submit"
+            class="login-btn">
+
+                Login
+
+            </button>
+
+        </form>
+
+        <div class="trust">
+
+            <i data-lucide="shield-check"></i>
+
+            <span>
+
+                Secure • Reliable • Trusted by Healthcare Professionals
+
+            </span>
+
+        </div>
+
+    </div>
 
 </div>
 
-<h1>MediCare Pro</h1>
+<div class="footer">
 
-<p>Smart Healthcare Management Platform</p>
-
-</div>
-
-<form id="loginForm">
-
-<div class="input-group">
-
-<label>
-
-Hospital Domain
-
-</label>
-
-<input
-type="text"
-id="hospitalDomain"
-placeholder="royalcare">
-
-</div>
-
-<div class="input-group">
-
-<label>
-
-Email
-
-</label>
-
-<input
-type="email"
-id="email"
-placeholder="admin@royalcare.com">
-
-</div>
-
-<div class="input-group">
-
-<label>
-
-Password
-
-</label>
-
-<input
-type="password"
-id="password"
-placeholder="••••••••">
-
-</div>
-
-<div class="remember">
-
-<label>
-
-<input type="checkbox">
-
-Remember Me
-
-</label>
-
-<a href="#">
-
-Forgot Password?
-
-</a>
-
-</div>
-
-<button
-type="submit"
-class="login-btn">
-
-Login
-
-</button>
-
-</form>
-
-</div>
+© 2026 MediCare Pro. All rights reserved.
 
 </div>
 
 <script>
-
 lucide.createIcons();
-
-const form =
-document.getElementById("loginForm");
-
-form.addEventListener(
-
-"submit",
-
-function(e){
-
-e.preventDefault();
-
-const domain =
-document.getElementById(
-"hospitalDomain"
-).value;
-
-const email =
-document.getElementById(
-"email"
-).value;
-
-const password =
-document.getElementById(
-"password"
-).value;
-
-if(
-
-domain === "" ||
-
-email === "" ||
-
-password === ""
-
-){
-
-alert(
-
-"Please fill all fields"
-
-);
-
-return;
-
-}
-
-window.location.href =
-"hospital.html";
-
-}
-
-);
-
 </script>
 
 </body>
-
 </html>
