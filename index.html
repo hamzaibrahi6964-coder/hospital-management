@@ -1,1 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MediCare Pro ERP</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<script
+src="https://unpkg.com/lucide@latest">
+</script>
+
+</head>
+
+<body>
+
+<div class="login-page">
+
+<div class="login-card">
+
+<div class="brand">
+
+<div class="logo">
+
+🏥
+
+</div>
+
+<h1>MediCare Pro</h1>
+
+<p>Smart Healthcare Management Platform</p>
+
+</div>
+
+<form id="loginForm">
+
+<div class="input-group">
+
+<label>
+
+Hospital Domain
+
+</label>
+
+<input
+type="text"
+id="hospitalDomain"
+placeholder="royalcare">
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Email
+
+</label>
+
+<input
+type="email"
+id="email"
+placeholder="admin@royalcare.com">
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+Password
+
+</label>
+
+<input
+type="password"
+id="password"
+placeholder="••••••••">
+
+</div>
+
+<div class="remember">
+
+<label>
+
+<input type="checkbox">
+
+Remember Me
+
+</label>
+
+<a href="#">
+
+Forgot Password?
+
+</a>
+
+</div>
+
+<button
+type="submit"
+class="login-btn">
+
+Login
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<script>
+
+lucide.createIcons();
+
+const form =
+document.getElementById("loginForm");
+
+form.addEventListener(
+
+"submit",
+
+function(e){
+
+e.preventDefault();
+
+const domain =
+document.getElementById(
+"hospitalDomain"
+).value;
+
+const email =
+document.getElementById(
+"email"
+).value;
+
+const password =
+document.getElementById(
+"password"
+).value;
+
+if(
+
+domain === "" ||
+
+email === "" ||
+
+password === ""
+
+){
+
+alert(
+
+"Please fill all fields"
+
+);
+
+return;
+
+}
+
+window.location.href =
+"hospital.html";
+
+}
+
+);
+
+</script>
+
+</body>
+
+</html>
