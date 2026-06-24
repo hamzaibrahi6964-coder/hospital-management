@@ -724,3 +724,79 @@ body{
     }
 
 }
+
+
+/* HERO BANNER */
+
+.hero-banner{
+
+    background:
+    linear-gradient(
+    135deg,
+    #2563eb,
+    #1e40af
+    );
+
+    border-radius:24px;
+
+    padding:30px;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 15px 40px rgba(37,99,235,.25);
+
+}
+
+.hero-banner h1{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.hero-banner p{
+    opacity:.9;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
+
+.hero-buttons button{
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    background:white;
+
+    color:#2563eb;
+
+}
+
+.hero-stats{
+    text-align:right;
+}
+
+.hero-stats h2{
+    font-size:42px;
+}
+
+.hero-stats span{
+    opacity:.8;
+}
