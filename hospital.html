@@ -224,25 +224,114 @@
 
         <!-- Content Grid -->
 
-        <section class="content-grid">
+      <!-- QUICK ACTIONS -->
 
-            <div class="panel">
+<section class="quick-actions">
 
-                <h3>Recent Patients</h3>
+    <button>Add Patient</button>
 
-                <p>No patient records yet.</p>
+    <button>Book Appointment</button>
 
+    <button>Generate Bill</button>
+
+    <button>Lab Request</button>
+
+</section>
+
+<!-- MAIN GRID -->
+
+<section class="dashboard-grid">
+
+    <!-- PATIENT TABLE -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+            <h3>Recent Patients</h3>
+        </div>
+
+        <table class="patients-table">
+
+            <thead>
+                <tr>
+                    <th>Patient</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>John Doe</td>
+                    <td>Cardiology</td>
+                    <td><span class="status admitted">Admitted</span></td>
+                </tr>
+
+                <tr>
+                    <td>Mary James</td>
+                    <td>Laboratory</td>
+                    <td><span class="status discharged">Discharged</span></td>
+                </tr>
+
+                <tr>
+                    <td>Ahmed Musa</td>
+                    <td>Surgery</td>
+                    <td><span class="status admitted">Admitted</span></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+
+    <div class="side-widgets">
+
+        <div class="panel">
+
+            <h3>Today's Appointments</h3>
+
+            <div class="appointment-item">
+                <strong>09:00 AM</strong>
+                <p>John Doe - Cardiology</p>
             </div>
 
-            <div class="panel">
-
-                <h3>Today's Appointments</h3>
-
-                <p>No appointments scheduled.</p>
-
+            <div class="appointment-item">
+                <strong>11:30 AM</strong>
+                <p>Mary James - Pediatrics</p>
             </div>
 
-        </section>
+            <div class="appointment-item">
+                <strong>02:00 PM</strong>
+                <p>Ahmed Musa - Surgery</p>
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <h3>Recent Activities</h3>
+
+            <ul class="activity-list">
+
+                <li>Patient Registered</li>
+
+                <li>Lab Result Uploaded</li>
+
+                <li>Bill Generated</li>
+
+                <li>Doctor Assigned</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
 
     </main>
 
