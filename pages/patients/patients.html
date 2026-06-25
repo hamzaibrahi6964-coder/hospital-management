@@ -113,33 +113,268 @@
 
         </nav>
 
-        <div class="patients-page">
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            <div class="page-header">
+<title>Patients Management</title>
 
-                <div>
+<link rel="stylesheet" href="../../assets/css/style.css">
 
-                    <h1>Patients Management</h1>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-                    <p>
-                        Manage all hospital patients from one place.
-                    </p>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-                </div>
+<script src="https://unpkg.com/lucide@latest"></script>
 
-                <button class="add-btn">
+</head>
 
-                    <i data-lucide="user-plus"></i>
+<body class="dashboard-body">
 
-                    Add Patient
+<div class="dashboard-container">
 
-                </button>
+    <!-- SIDEBAR -->
 
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-logo">
+                <img src="../../assets/icons/logo.svg" alt="">
+            </div>
+
+            <div class="sidebar-title">
+                <h3>MediCare Pro</h3>
+                <span>Hospital ERP</span>
             </div>
 
         </div>
 
-    </main>
+        <ul class="sidebar-menu">
+
+            <li onclick="window.location.href='../../hospital.html'">
+                <i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span>
+            </li>
+
+            <li class="active">
+                <i data-lucide="users"></i>
+                <span>Patients</span>
+            </li>
+
+            <li>
+                <i data-lucide="stethoscope"></i>
+                <span>Doctors</span>
+            </li>
+
+            <li>
+                <i data-lucide="calendar-days"></i>
+                <span>Appointments</span>
+            </li>
+
+            <li>
+                <i data-lucide="pill"></i>
+                <span>Pharmacy</span>
+            </li>
+
+            <li>
+                <i data-lucide="wallet"></i>
+                <span>Billing</span>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <nav class="topbar">
+
+            <div class="search-box">
+
+                <i data-lucide="search"></i>
+
+                <input
+                type="text"
+                placeholder="Search patients...">
+
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="icon-btn">
+                    <i data-lucide="bell"></i>
+                </button>
+
+                <div class="profile">
+
+                    <div class="avatar">
+                        A
+                    </div>
+
+                    <div>
+                        <h4>Administrator</h4>
+                        <span>Hospital Admin</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+      <div class="page-header">
+
+    <div>
+
+        <h1>Patients Management</h1>
+
+        <p>Manage all hospital patients from one place.</p>
+
+    </div>
+
+    <button class="add-btn" id="openPatientModal">
+
+        <i data-lucide="user-plus"></i>
+
+        Add Patient
+
+    </button>
+
+</div>
+
+<div class="patients-stats">
+
+    <div class="stat-card">
+        <h3>Total Patients</h3>
+        <h2>1,245</h2>
+    </div>
+
+    <div class="stat-card">
+        <h3>Admitted</h3>
+        <h2>321</h2>
+    </div>
+
+    <div class="stat-card">
+        <h3>Discharged</h3>
+        <h2>924</h2>
+    </div>
+
+    <div class="stat-card">
+        <h3>Today's Registration</h3>
+        <h2>18</h2>
+    </div>
+
+</div>
+
+<div class="search-section">
+
+    <div class="patient-search">
+
+        <i data-lucide="search"></i>
+
+        <input
+        type="text"
+        placeholder="Search patient by name, ID, phone number...">
+
+    </div>
+
+</div>
+
+<div class="table-card">
+
+    <table class="patients-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Patient ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td>PAT-1001</td>
+                <td>John Doe</td>
+                <td>Male</td>
+                <td>35</td>
+                <td>Cardiology</td>
+
+                <td>
+                    <span class="status admitted">
+                        Admitted
+                    </span>
+                </td>
+
+                <td>
+
+                    <button class="action-btn view">
+                        View
+                    </button>
+
+                    <button class="action-btn edit">
+                        Edit
+                    </button>
+
+                    <button class="action-btn delete">
+                        Delete
+                    </button>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>PAT-1002</td>
+                <td>Mary James</td>
+                <td>Female</td>
+                <td>28</td>
+                <td>Laboratory</td>
+
+                <td>
+                    <span class="status discharged">
+                        Discharged
+                    </span>
+                </td>
+
+                <td>
+
+                    <button class="action-btn view">
+                        View
+                    </button>
+
+                    <button class="action-btn edit">
+                        Edit
+                    </button>
+
+                    <button class="action-btn delete">
+                        Delete
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
 
 </div>
 
