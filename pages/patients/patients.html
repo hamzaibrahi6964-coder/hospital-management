@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <script src="https://unpkg.com/lucide@latest"></script>
-
 </head>
 
 <body class="dashboard-body">
@@ -81,13 +81,8 @@
         <nav class="topbar">
 
             <div class="search-box">
-
                 <i data-lucide="search"></i>
-
-                <input
-                type="text"
-                placeholder="Search patients...">
-
+                <input type="text" placeholder="Search patients...">
             </div>
 
             <div class="topbar-right">
@@ -98,9 +93,7 @@
 
                 <div class="profile">
 
-                    <div class="avatar">
-                        A
-                    </div>
+                    <div class="avatar">A</div>
 
                     <div>
                         <h4>Administrator</h4>
@@ -113,268 +106,129 @@
 
         </nav>
 
-       <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <div class="page-header">
 
-<title>Patients Management</title>
-
-<link rel="stylesheet" href="../../assets/css/style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<script src="https://unpkg.com/lucide@latest"></script>
-
-</head>
-
-<body class="dashboard-body">
-
-<div class="dashboard-container">
-
-    <!-- SIDEBAR -->
-
-    <aside class="sidebar">
-
-        <div class="sidebar-header">
-
-            <div class="sidebar-logo">
-                <img src="../../assets/icons/logo.svg" alt="">
+            <div>
+                <h1>Patients Management</h1>
+                <p>Manage all hospital patients from one place.</p>
             </div>
 
-            <div class="sidebar-title">
-                <h3>MediCare Pro</h3>
-                <span>Hospital ERP</span>
+            <button class="add-btn">
+                <i data-lucide="user-plus"></i>
+                Add Patient
+            </button>
+
+        </div>
+
+        <div class="patients-stats">
+
+            <div class="stat-card">
+                <h3>Total Patients</h3>
+                <h2>1,245</h2>
+            </div>
+
+            <div class="stat-card">
+                <h3>Admitted</h3>
+                <h2>321</h2>
+            </div>
+
+            <div class="stat-card">
+                <h3>Discharged</h3>
+                <h2>924</h2>
+            </div>
+
+            <div class="stat-card">
+                <h3>Today's Registration</h3>
+                <h2>18</h2>
             </div>
 
         </div>
 
-        <ul class="sidebar-menu">
+        <div class="search-section">
 
-            <li onclick="window.location.href='../../hospital.html'">
-                <i data-lucide="layout-dashboard"></i>
-                <span>Dashboard</span>
-            </li>
-
-            <li class="active">
-                <i data-lucide="users"></i>
-                <span>Patients</span>
-            </li>
-
-            <li>
-                <i data-lucide="stethoscope"></i>
-                <span>Doctors</span>
-            </li>
-
-            <li>
-                <i data-lucide="calendar-days"></i>
-                <span>Appointments</span>
-            </li>
-
-            <li>
-                <i data-lucide="pill"></i>
-                <span>Pharmacy</span>
-            </li>
-
-            <li>
-                <i data-lucide="wallet"></i>
-                <span>Billing</span>
-            </li>
-
-        </ul>
-
-    </aside>
-
-    <!-- MAIN CONTENT -->
-
-    <main class="main-content">
-
-        <nav class="topbar">
-
-            <div class="search-box">
+            <div class="patient-search">
 
                 <i data-lucide="search"></i>
 
                 <input
                 type="text"
-                placeholder="Search patients...">
+                placeholder="Search patient by name, ID, phone number...">
 
             </div>
 
-            <div class="topbar-right">
+        </div>
 
-                <button class="icon-btn">
-                    <i data-lucide="bell"></i>
-                </button>
+        <div class="table-card">
 
-                <div class="profile">
+            <table class="patients-table">
 
-                    <div class="avatar">
-                        A
-                    </div>
+                <thead>
 
-                    <div>
-                        <h4>Administrator</h4>
-                        <span>Hospital Admin</span>
-                    </div>
+                    <tr>
+                        <th>Patient ID</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Department</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
 
-                </div>
+                </thead>
 
-            </div>
+                <tbody>
 
-        </nav>
+                    <tr>
 
-      <div class="page-header">
+                        <td>PAT-1001</td>
+                        <td>John Doe</td>
+                        <td>Male</td>
+                        <td>35</td>
+                        <td>Cardiology</td>
 
-    <div>
+                        <td>
+                            <span class="status admitted">
+                                Admitted
+                            </span>
+                        </td>
 
-        <h1>Patients Management</h1>
+                        <td>
+                            <button class="action-btn view">View</button>
+                            <button class="action-btn edit">Edit</button>
+                            <button class="action-btn delete">Delete</button>
+                        </td>
 
-        <p>Manage all hospital patients from one place.</p>
+                    </tr>
 
-    </div>
+                    <tr>
 
-    <button class="add-btn" id="openPatientModal">
+                        <td>PAT-1002</td>
+                        <td>Mary James</td>
+                        <td>Female</td>
+                        <td>28</td>
+                        <td>Laboratory</td>
 
-        <i data-lucide="user-plus"></i>
+                        <td>
+                            <span class="status discharged">
+                                Discharged
+                            </span>
+                        </td>
 
-        Add Patient
+                        <td>
+                            <button class="action-btn view">View</button>
+                            <button class="action-btn edit">Edit</button>
+                            <button class="action-btn delete">Delete</button>
+                        </td>
 
-    </button>
+                    </tr>
 
-</div>
+                </tbody>
 
-<div class="patients-stats">
+            </table>
 
-    <div class="stat-card">
-        <h3>Total Patients</h3>
-        <h2>1,245</h2>
-    </div>
+        </div>
 
-    <div class="stat-card">
-        <h3>Admitted</h3>
-        <h2>321</h2>
-    </div>
-
-    <div class="stat-card">
-        <h3>Discharged</h3>
-        <h2>924</h2>
-    </div>
-
-    <div class="stat-card">
-        <h3>Today's Registration</h3>
-        <h2>18</h2>
-    </div>
-
-</div>
-
-<div class="search-section">
-
-    <div class="patient-search">
-
-        <i data-lucide="search"></i>
-
-        <input
-        type="text"
-        placeholder="Search patient by name, ID, phone number...">
-
-    </div>
-
-</div>
-
-<div class="table-card">
-
-    <table class="patients-table">
-
-        <thead>
-
-            <tr>
-
-                <th>Patient ID</th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>Age</th>
-                <th>Department</th>
-                <th>Status</th>
-                <th>Actions</th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-            <tr>
-
-                <td>PAT-1001</td>
-                <td>John Doe</td>
-                <td>Male</td>
-                <td>35</td>
-                <td>Cardiology</td>
-
-                <td>
-                    <span class="status admitted">
-                        Admitted
-                    </span>
-                </td>
-
-                <td>
-
-                    <button class="action-btn view">
-                        View
-                    </button>
-
-                    <button class="action-btn edit">
-                        Edit
-                    </button>
-
-                    <button class="action-btn delete">
-                        Delete
-                    </button>
-
-                </td>
-
-            </tr>
-
-            <tr>
-
-                <td>PAT-1002</td>
-                <td>Mary James</td>
-                <td>Female</td>
-                <td>28</td>
-                <td>Laboratory</td>
-
-                <td>
-                    <span class="status discharged">
-                        Discharged
-                    </span>
-                </td>
-
-                <td>
-
-                    <button class="action-btn view">
-                        View
-                    </button>
-
-                    <button class="action-btn edit">
-                        Edit
-                    </button>
-
-                    <button class="action-btn delete">
-                        Delete
-                    </button>
-
-                </td>
-
-            </tr>
-
-        </tbody>
-
-    </table>
+    </main>
 
 </div>
 
