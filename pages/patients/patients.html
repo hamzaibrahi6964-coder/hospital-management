@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Patients Management | MediCare Pro</title>
+<title>Patients Management</title>
 
 <link rel="stylesheet" href="../../assets/css/style.css">
 
@@ -21,453 +19,133 @@
 
 <body class="dashboard-body">
 
-<div class="patients-page">
+<div class="dashboard-container">
 
-    <!-- HEADER -->
+    <!-- SIDEBAR -->
 
-    <div class="page-header">
+    <aside class="sidebar">
 
-        <div>
+        <div class="sidebar-header">
 
-            <h1>Patients Management</h1>
+            <div class="sidebar-logo">
+                <img src="../../assets/icons/logo.svg" alt="">
+            </div>
 
-            <p>
-                Manage all hospital patients from one place.
-            </p>
-
-        </div>
-
- <button class="add-btn" id="openPatientModal">
-
-    <i data-lucide="user-plus"></i>
-
-    Add Patient
-
-</button>
-
-    </div>
-
-    <!-- STATS -->
-
-    <div class="patients-stats">
-
-        <div class="stat-card">
-
-            <h3>Total Patients</h3>
-
-            <h2>1,245</h2>
+            <div class="sidebar-title">
+                <h3>MediCare Pro</h3>
+                <span>Hospital ERP</span>
+            </div>
 
         </div>
 
-        <div class="stat-card">
+        <ul class="sidebar-menu">
 
-            <h3>Admitted</h3>
+            <li onclick="window.location.href='../../hospital.html'">
+                <i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span>
+            </li>
 
-            <h2>321</h2>
+            <li class="active">
+                <i data-lucide="users"></i>
+                <span>Patients</span>
+            </li>
+
+            <li>
+                <i data-lucide="stethoscope"></i>
+                <span>Doctors</span>
+            </li>
+
+            <li>
+                <i data-lucide="calendar-days"></i>
+                <span>Appointments</span>
+            </li>
+
+            <li>
+                <i data-lucide="pill"></i>
+                <span>Pharmacy</span>
+            </li>
+
+            <li>
+                <i data-lucide="wallet"></i>
+                <span>Billing</span>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <nav class="topbar">
+
+            <div class="search-box">
+
+                <i data-lucide="search"></i>
+
+                <input
+                type="text"
+                placeholder="Search patients...">
+
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="icon-btn">
+                    <i data-lucide="bell"></i>
+                </button>
+
+                <div class="profile">
+
+                    <div class="avatar">
+                        A
+                    </div>
+
+                    <div>
+                        <h4>Administrator</h4>
+                        <span>Hospital Admin</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        <div class="patients-page">
+
+            <div class="page-header">
+
+                <div>
+
+                    <h1>Patients Management</h1>
+
+                    <p>
+                        Manage all hospital patients from one place.
+                    </p>
+
+                </div>
+
+                <button class="add-btn">
+
+                    <i data-lucide="user-plus"></i>
+
+                    Add Patient
+
+                </button>
+
+            </div>
 
         </div>
 
-        <div class="stat-card">
-
-            <h3>Discharged</h3>
-
-            <h2>924</h2>
-
-        </div>
-
-        <div class="stat-card">
-
-            <h3>Today's Registration</h3>
-
-            <h2>18</h2>
-
-        </div>
-
-    </div>
-
-    <!-- SEARCH -->
-
-    <div class="search-section">
-
-        <div class="patient-search">
-
-            <i data-lucide="search"></i>
-
-            <input
-            type="text"
-            placeholder="Search patient by name, ID, phone number...">
-
-        </div>
-
-    </div>
-
-    <!-- TABLE -->
-
-    <div class="table-card">
-
-        <table class="patients-table">
-
-            <thead>
-
-                <tr>
-
-                    <th>Patient ID</th>
-
-                    <th>Name</th>
-
-                    <th>Gender</th>
-
-                    <th>Age</th>
-
-                    <th>Department</th>
-
-                    <th>Status</th>
-
-                    <th>Actions</th>
-
-                </tr>
-
-            </thead>
-
-            <tbody>
-
-                <tr>
-
-                    <td>PAT-1001</td>
-
-                    <td>John Doe</td>
-
-                    <td>Male</td>
-
-                    <td>35</td>
-
-                    <td>Cardiology</td>
-
-                    <td>
-                        <span class="status admitted">
-                            Admitted
-                        </span>
-                    </td>
-
-                    <td>
-
-                        <button class="action-btn view">
-                            View
-                        </button>
-
-                        <button class="action-btn edit">
-                            Edit
-                        </button>
-
-                        <button class="action-btn delete">
-                            Delete
-                        </button>
-
-                    </td>
-
-                </tr>
-
-                <tr>
-
-                    <td>PAT-1002</td>
-
-                    <td>Mary James</td>
-
-                    <td>Female</td>
-
-                    <td>28</td>
-
-                    <td>Laboratory</td>
-
-                    <td>
-                        <span class="status discharged">
-                            Discharged
-                        </span>
-                    </td>
-
-                    <td>
-
-                        <button class="action-btn view">
-                            View
-                        </button>
-
-                        <button class="action-btn edit">
-                            Edit
-                        </button>
-
-                        <button class="action-btn delete">
-                            Delete
-                        </button>
-
-                    </td>
-
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
+    </main>
 
 </div>
 
-<!-- ADD PATIENT MODAL -->
-
-<div class="modal-overlay" id="patientModal">
-
-    <div class="patient-modal">
-
-        <div class="modal-header">
-
-            <h2>Add New Patient</h2>
-
-            <button id="closePatientModal">✕</button>
-
-        </div>
-
-        <form class="patient-form">
-
-            <div class="photo-upload">
-
-                <img
-                src="https://via.placeholder.com/120"
-                id="photoPreview">
-
-                <input
-                type="file"
-                id="patientPhoto"
-                accept="image/*">
-
-            </div>
-
-            <div class="form-grid">
-
-                <div>
-
-                    <label>Patient ID</label>
-
-                    <input
-                    type="text"
-                    id="patientId"
-                    readonly>
-
-                </div>
-
-                <div>
-
-                    <label>Full Name</label>
-
-                    <input
-                    type="text"
-                    placeholder="Enter full name">
-
-                </div>
-
-                <div>
-
-                    <label>Gender</label>
-
-                    <select>
-
-                        <option>Male</option>
-
-                        <option>Female</option>
-
-                    </select>
-
-                </div>
-
-                <div>
-
-                    <label>Blood Group</label>
-
-                    <select>
-
-                        <option>A+</option>
-                        <option>A-</option>
-                        <option>B+</option>
-                        <option>B-</option>
-                        <option>AB+</option>
-                        <option>AB-</option>
-                        <option>O+</option>
-                        <option>O-</option>
-
-                    </select>
-
-                </div>
-
-                <div>
-
-                    <label>Phone Number</label>
-
-                    <input
-                    type="text"
-                    placeholder="080xxxxxxxx">
-
-                </div>
-
-                <div>
-
-                    <label>Emergency Contact</label>
-
-                    <input
-                    type="text"
-                    placeholder="Emergency contact">
-
-                </div>
-
-                <div>
-
-                    <label>Department</label>
-
-                    <select>
-
-                        <option>Cardiology</option>
-
-                        <option>Surgery</option>
-
-                        <option>Laboratory</option>
-
-                        <option>Pediatrics</option>
-
-                        <option>General Medicine</option>
-
-                    </select>
-
-                </div>
-
-                <div>
-
-                    <label>Address</label>
-
-                    <input
-                    type="text"
-                    placeholder="Patient address">
-
-                </div>
-
-            </div>
-
-            <div class="full-width">
-
-                <label>Medical History</label>
-
-                <textarea
-                rows="5"
-                placeholder="Medical history, allergies, previous conditions..."></textarea>
-
-            </div>
-
-            <div class="modal-actions">
-
-                <button
-                type="button"
-                class="cancel-btn"
-                id="cancelPatient">
-
-                    Cancel
-
-                </button>
-
-                <button
-                type="submit"
-                class="save-btn">
-
-                    Save Patient
-
-                </button>
-
-            </div>
-
-        </form>
-
-    </div>
-
-</div>    
-    
 <script>
-
 lucide.createIcons();
-
-const modal =
-document.getElementById("patientModal");
-
-document
-.getElementById("openPatientModal")
-.onclick=()=>{
-
-modal.classList.add("active");
-
-generatePatientID();
-
-};
-
-document
-.getElementById("closePatientModal")
-.onclick=()=>{
-
-modal.classList.remove("active");
-
-};
-
-document
-.getElementById("cancelPatient")
-.onclick=()=>{
-
-modal.classList.remove("active");
-
-};
-
-/* AUTO PATIENT ID */
-
-function generatePatientID(){
-
-const random =
-Math.floor(
-1000 + Math.random()*9000
-);
-
-document
-.getElementById("patientId")
-.value =
-"PAT-" + random;
-
-}
-
-/* PHOTO PREVIEW */
-
-document
-.getElementById("patientPhoto")
-.addEventListener(
-"change",
-function(e){
-
-const file =
-e.target.files[0];
-
-if(file){
-
-const reader =
-new FileReader();
-
-reader.onload =
-function(event){
-
-document
-.getElementById("photoPreview")
-.src =
-event.target.result;
-
-};
-
-reader.readAsDataURL(file);
-
-}
-
-});
-
 </script>
 
 </body>
-
 </html>
