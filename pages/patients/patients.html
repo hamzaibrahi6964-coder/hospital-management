@@ -37,13 +37,13 @@
 
         </div>
 
-        <button class="add-btn">
+ <button class="add-btn" id="openPatientModal">
 
-            <i data-lucide="user-plus"></i>
+    <i data-lucide="user-plus"></i>
 
-            Add Patient
+    Add Patient
 
-        </button>
+</button>
 
     </div>
 
@@ -211,8 +211,261 @@
 
 </div>
 
+<!-- ADD PATIENT MODAL -->
+
+<div class="modal-overlay" id="patientModal">
+
+    <div class="patient-modal">
+
+        <div class="modal-header">
+
+            <h2>Add New Patient</h2>
+
+            <button id="closePatientModal">✕</button>
+
+        </div>
+
+        <form class="patient-form">
+
+            <div class="photo-upload">
+
+                <img
+                src="https://via.placeholder.com/120"
+                id="photoPreview">
+
+                <input
+                type="file"
+                id="patientPhoto"
+                accept="image/*">
+
+            </div>
+
+            <div class="form-grid">
+
+                <div>
+
+                    <label>Patient ID</label>
+
+                    <input
+                    type="text"
+                    id="patientId"
+                    readonly>
+
+                </div>
+
+                <div>
+
+                    <label>Full Name</label>
+
+                    <input
+                    type="text"
+                    placeholder="Enter full name">
+
+                </div>
+
+                <div>
+
+                    <label>Gender</label>
+
+                    <select>
+
+                        <option>Male</option>
+
+                        <option>Female</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>Blood Group</label>
+
+                    <select>
+
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>Phone Number</label>
+
+                    <input
+                    type="text"
+                    placeholder="080xxxxxxxx">
+
+                </div>
+
+                <div>
+
+                    <label>Emergency Contact</label>
+
+                    <input
+                    type="text"
+                    placeholder="Emergency contact">
+
+                </div>
+
+                <div>
+
+                    <label>Department</label>
+
+                    <select>
+
+                        <option>Cardiology</option>
+
+                        <option>Surgery</option>
+
+                        <option>Laboratory</option>
+
+                        <option>Pediatrics</option>
+
+                        <option>General Medicine</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>Address</label>
+
+                    <input
+                    type="text"
+                    placeholder="Patient address">
+
+                </div>
+
+            </div>
+
+            <div class="full-width">
+
+                <label>Medical History</label>
+
+                <textarea
+                rows="5"
+                placeholder="Medical history, allergies, previous conditions..."></textarea>
+
+            </div>
+
+            <div class="modal-actions">
+
+                <button
+                type="button"
+                class="cancel-btn"
+                id="cancelPatient">
+
+                    Cancel
+
+                </button>
+
+                <button
+                type="submit"
+                class="save-btn">
+
+                    Save Patient
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>    
+    
 <script>
+
 lucide.createIcons();
+
+const modal =
+document.getElementById("patientModal");
+
+document
+.getElementById("openPatientModal")
+.onclick=()=>{
+
+modal.classList.add("active");
+
+generatePatientID();
+
+};
+
+document
+.getElementById("closePatientModal")
+.onclick=()=>{
+
+modal.classList.remove("active");
+
+};
+
+document
+.getElementById("cancelPatient")
+.onclick=()=>{
+
+modal.classList.remove("active");
+
+};
+
+/* AUTO PATIENT ID */
+
+function generatePatientID(){
+
+const random =
+Math.floor(
+1000 + Math.random()*9000
+);
+
+document
+.getElementById("patientId")
+.value =
+"PAT-" + random;
+
+}
+
+/* PHOTO PREVIEW */
+
+document
+.getElementById("patientPhoto")
+.addEventListener(
+"change",
+function(e){
+
+const file =
+e.target.files[0];
+
+if(file){
+
+const reader =
+new FileReader();
+
+reader.onload =
+function(event){
+
+document
+.getElementById("photoPreview")
+.src =
+event.target.result;
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+});
+
 </script>
 
 </body>
