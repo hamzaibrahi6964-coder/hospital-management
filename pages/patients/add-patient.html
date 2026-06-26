@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Add Patient | MediCare Pro</title>
+
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+<body class="dashboard-body">
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-logo">
+
+                <img src="../../assets/icons/logo.svg">
+
+            </div>
+
+            <div class="sidebar-title">
+
+                <h3>MediCare Pro</h3>
+
+                <span>Hospital ERP</span>
+
+            </div>
+
+        </div>
+
+        <ul class="sidebar-menu">
+
+            <li onclick="window.location.href='../../hospital.html'">
+
+                <i data-lucide="layout-dashboard"></i>
+
+                <span>Dashboard</span>
+
+            </li>
+
+            <li class="active">
+
+                <i data-lucide="users"></i>
+
+                <span>Patients</span>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main-content">
+
+        <!-- Topbar -->
+
+        <nav class="topbar">
+
+            <div>
+
+                <h2>Add New Patient</h2>
+
+                <small>Create a new patient record</small>
+
+            </div>
+
+            <button class="add-btn"
+            onclick="window.location.href='patients.html'">
+
+                ← Back
+
+            </button>
+
+        </nav>
+
+        <!-- Progress -->
+
+        <div class="wizard-progress">
+
+            <div class="step active">
+
+                <div class="circle">1</div>
+
+                <span>Personal</span>
+
+            </div>
+
+            <div class="step">
+
+                <div class="circle">2</div>
+
+                <span>Medical</span>
+
+            </div>
+
+            <div class="step">
+
+                <div class="circle">3</div>
+
+                <span>Emergency</span>
+
+            </div>
+
+            <div class="step">
+
+                <div class="circle">4</div>
+
+                <span>Review</span>
+
+            </div>
+
+        </div>
+
+        <!-- Card -->
+
+        <div class="patient-form-card">
+
+            <h2>Personal Information</h2>
+
+            <p>
+                Complete the patient's personal information.
+            </p>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+</body>
+
+</html>
