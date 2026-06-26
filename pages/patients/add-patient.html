@@ -134,15 +134,183 @@
 
         <!-- Card -->
 
-        <div class="patient-form-card">
+       <div class="patient-form-card">
 
-            <h2>Personal Information</h2>
+    <h2>Personal Information</h2>
 
-            <p>
-                Complete the patient's personal information.
-            </p>
+    <p>Complete the patient's personal information.</p>
+
+    <form class="patient-form">
+
+        <!-- PHOTO -->
+
+        <div class="photo-section">
+
+            <div class="photo-box">
+
+               <img src="https://placehold.co/140x140/png">
+                     id="photoPreview"
+                     alt="Patient Photo">
+
+                <input
+                type="file"
+                id="patientPhoto"
+                accept="image/*">
+
+                <button
+                type="button"
+                class="upload-btn"
+                onclick="document.getElementById('patientPhoto').click();">
+
+                    Upload Photo
+
+                </button>
+
+            </div>
 
         </div>
+
+        <!-- PATIENT ID -->
+
+        <div class="form-group">
+
+            <label>Patient ID</label>
+
+            <input
+            type="text"
+            id="patientId"
+            readonly>
+
+        </div>
+
+        <!-- FIRST NAME -->
+
+        <div class="form-group">
+
+            <label>First Name</label>
+
+            <input
+            type="text"
+            placeholder="Enter first name">
+
+        </div>
+
+        <!-- LAST NAME -->
+
+        <div class="form-group">
+
+            <label>Last Name</label>
+
+            <input
+            type="text"
+            placeholder="Enter last name">
+
+        </div>
+
+        <!-- GENDER -->
+
+        <div class="form-group">
+
+            <label>Gender</label>
+
+            <select>
+
+                <option>Select Gender</option>
+
+                <option>Male</option>
+
+                <option>Female</option>
+
+            </select>
+
+        </div>
+
+        <!-- DOB -->
+
+        <div class="form-group">
+
+            <label>Date of Birth</label>
+
+            <input
+            type="date"
+            id="dob">
+
+        </div>
+
+        <!-- AGE -->
+
+        <div class="form-group">
+
+            <label>Age</label>
+
+            <input
+            type="text"
+            id="age"
+            readonly>
+
+        </div>
+
+        <!-- PHONE -->
+
+        <div class="form-group">
+
+            <label>Phone Number</label>
+
+            <input
+            type="text"
+            placeholder="080xxxxxxxx">
+
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+            <label>Email</label>
+
+            <input
+            type="email"
+            placeholder="patient@email.com">
+
+        </div>
+
+        <!-- ADDRESS -->
+
+        <div class="form-group full">
+
+            <label>Home Address</label>
+
+            <textarea
+            placeholder="Enter full home address"></textarea>
+
+        </div>
+
+        <!-- BUTTONS -->
+
+        <div class="form-navigation">
+
+            <button
+            type="button"
+            class="cancel-form-btn"
+            onclick="window.location.href='patients.html'">
+
+                Cancel
+
+            </button>
+
+            <button
+            type="button"
+            class="next-btn">
+
+                Next →
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
 
     </main>
 
@@ -151,6 +319,66 @@
 <script>
 
 lucide.createIcons();
+
+/* AUTO PATIENT ID */
+
+document.getElementById("patientId").value =
+"PAT-" + Math.floor(1000 + Math.random()*9000);
+
+/* PHOTO PREVIEW */
+
+const patientPhoto =
+document.getElementById("patientPhoto");
+
+patientPhoto.addEventListener("change",function(e){
+
+    const file = e.target.files[0];
+
+    if(file){
+
+        const reader = new FileReader();
+
+        reader.onload=function(event){
+
+            document.getElementById("photoPreview").src =
+            event.target.result;
+
+        }
+
+        reader.readAsDataURL(file);
+
+    }
+
+});
+
+/* AUTO AGE */
+
+const dob =
+document.getElementById("dob");
+
+dob.addEventListener("change",function(){
+
+    const birth =
+    new Date(this.value);
+
+    const today =
+    new Date();
+
+    let age =
+    today.getFullYear() - birth.getFullYear();
+
+    const month =
+    today.getMonth() - birth.getMonth();
+
+    if(month < 0 || (month === 0 && today.getDate() < birth.getDate())){
+
+        age--;
+
+    }
+
+    document.getElementById("age").value = age;
+
+});
 
 </script>
 
