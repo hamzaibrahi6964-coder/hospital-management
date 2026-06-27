@@ -296,15 +296,14 @@
 
                 Cancel
 
-            </button>
-
             <button
-            type="button"
-            class="next-btn">
+type="button"
+class="next-btn"
+id="nextBtn">
 
-                Next →
+    Next →
 
-            </button>
+</button>
 
         </div>
 
@@ -379,7 +378,17 @@ dob.addEventListener("change",function(){
     document.getElementById("age").value = age;
 
 });
+    
+/* ===========================
+   NEXT BUTTON
+=========================== */
 
+document.getElementById("nextBtn").addEventListener("click", function(){
+
+    alert("Next button is working!");
+
+});
+    
 </script>
 
 </body>
