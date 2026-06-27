@@ -1332,3 +1332,15 @@ textarea{
     }
 
 }
+
+/* ==========================
+   FORM STEPS
+========================== */
+
+.form-step{
+    display:none;
+}
+
+.form-step.active{
+    display:block;
+}
