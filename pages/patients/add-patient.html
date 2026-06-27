@@ -136,6 +136,8 @@
 
        <div class="patient-form-card">
 
+    <div class="form-step active" id="step1">
+
     <h2>Personal Information</h2>
 
     <p>Complete the patient's personal information.</p>
@@ -307,9 +309,23 @@ id="nextBtn">
 
         </div>
 
-    </form>
+</form>
 
 </div>
+
+<div class="form-step" id="step2">
+
+</div>
+
+<div class="form-step" id="step3">
+
+</div>
+
+<div class="form-step" id="step4">
+
+</div>
+
+</div> 
 
     </main>
 
@@ -385,8 +401,11 @@ dob.addEventListener("change",function(){
 
 document.getElementById("nextBtn").addEventListener("click", function(){
 
-    window.location.href = "medical-information.html";
+    document.getElementById("step1").classList.remove("active");
 
+    document.getElementById("step2").classList.add("active");
+
+});
 });
 });
     
