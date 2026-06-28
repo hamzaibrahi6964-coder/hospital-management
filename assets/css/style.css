@@ -1344,3 +1344,387 @@ textarea{
 .form-step.active{
     display:block;
 }
+
+/* ======================================================
+   PATIENT PROFILE PAGE
+====================================================== */
+
+.profile-container{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+/* HEADER */
+
+.patient-profile-header{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+    margin-bottom:10px;
+
+}
+
+.patient-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+.patient-avatar{
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:6px solid #eef4ff;
+
+    box-shadow:0 8px 25px rgba(37,99,235,.18);
+
+}
+
+.patient-left h1{
+
+    font-size:34px;
+
+    color:#0f172a;
+
+    margin-bottom:8px;
+
+}
+
+.patient-id{
+
+    color:#64748b;
+
+    margin-bottom:15px;
+
+}
+
+.patient-badges{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+.badge{
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.badge.blue{
+
+    background:#dbeafe;
+
+    color:#1d4ed8;
+
+}
+
+.badge.green{
+
+    background:#dcfce7;
+
+    color:#166534;
+
+}
+
+.badge.red{
+
+    background:#fee2e2;
+
+    color:#b91c1c;
+
+}
+
+/* ACTION BUTTONS */
+
+.patient-actions{
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+.profile-btn{
+
+    border:none;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.profile-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+
+}
+
+/* GRID */
+
+.profile-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+
+    gap:20px;
+
+    margin-top:5px;
+
+}
+
+/* CARD */
+
+.profile-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.profile-card h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#0f172a;
+
+    margin-bottom:22px;
+
+    font-size:22px;
+
+}
+
+/* INFO GRID */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+.info-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.info-item label{
+
+    color:#64748b;
+
+    font-size:13px;
+
+    margin-bottom:6px;
+
+    font-weight:600;
+
+}
+
+.info-item span{
+
+    color:#0f172a;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+.full-width{
+
+    grid-column:1/-1;
+
+}
+
+/* APPOINTMENTS */
+
+.appointment-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.appointment-item{
+
+    padding:15px;
+
+    border-radius:14px;
+
+    background:#f8fafc;
+
+    border-left:5px solid #2563eb;
+
+}
+
+.appointment-item strong{
+
+    color:#2563eb;
+
+}
+
+/* BILLING */
+
+.billing-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 0;
+
+}
+
+.billing-item.total{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#2563eb;
+
+}
+
+/* MEDICINE */
+
+.medicine-list{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.medicine-list li{
+
+    padding:14px;
+
+    background:#f8fafc;
+
+    border-radius:12px;
+
+    border-left:5px solid #10b981;
+
+}
+
+/* TABLE */
+
+.profile-card table{
+
+    margin-top:15px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .patient-profile-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:25px;
+
+    }
+
+    .patient-left{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .profile-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .info-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
