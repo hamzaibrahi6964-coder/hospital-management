@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Patient Profile | MediCare Pro</title>
+
+<link rel="stylesheet"
+href="../../assets/css/style.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+<body class="dashboard-body">
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-logo">
+
+                <img src="../../assets/icons/logo.svg">
+
+            </div>
+
+            <div class="sidebar-title">
+
+                <h3>MediCare Pro</h3>
+
+                <span>Hospital ERP</span>
+
+            </div>
+
+        </div>
+
+        <ul class="sidebar-menu">
+
+            <li onclick="window.location.href='../../hospital.html'">
+
+                <i data-lucide="layout-dashboard"></i>
+
+                <span>Dashboard</span>
+
+            </li>
+
+            <li class="active">
+
+                <i data-lucide="users"></i>
+
+                <span>Patients</span>
+
+            </li>
+
+            <li>
+
+                <i data-lucide="stethoscope"></i>
+
+                <span>Doctors</span>
+
+            </li>
+
+            <li>
+
+                <i data-lucide="calendar-days"></i>
+
+                <span>Appointments</span>
+
+            </li>
+
+            <li>
+
+                <i data-lucide="flask-conical"></i>
+
+                <span>Laboratory</span>
+
+            </li>
+
+            <li>
+
+                <i data-lucide="pill"></i>
+
+                <span>Pharmacy</span>
+
+            </li>
+
+            <li>
+
+                <i data-lucide="wallet"></i>
+
+                <span>Billing</span>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+        <nav class="topbar">
+
+            <div>
+
+                <h2>Patient Profile</h2>
+
+                <small>Complete patient information</small>
+
+            </div>
+
+            <button
+            class="add-btn"
+            onclick="window.location.href='patients.html'">
+
+                ← Back
+
+            </button>
+
+        </nav>
+
+        <div class="profile-container">
+
+  <!-- =====================================
+PATIENT HEADER CARD
+===================================== -->
+
+<div class="patient-profile-header">
+
+    <div class="patient-left">
+
+        <img
+        src="https://placehold.co/150x150"
+        id="patientProfilePhoto"
+        class="patient-avatar">
+
+        <div>
+
+            <h1>Hamza Ibrahim</h1>
+
+            <p class="patient-id">
+                Patient ID : PAT-6723
+            </p>
+
+            <div class="patient-badges">
+
+                <span class="badge blue">
+                    Male
+                </span>
+
+                <span class="badge red">
+                    AB-
+                </span>
+
+                <span class="badge green">
+                    Active
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="patient-actions">
+
+        <button class="profile-btn">
+
+            <i data-lucide="square-pen"></i>
+
+            Edit
+
+        </button>
+
+        <button class="profile-btn">
+
+            <i data-lucide="printer"></i>
+
+            Print
+
+        </button>
+
+        <button class="profile-btn">
+
+            <i data-lucide="download"></i>
+
+            PDF
+
+        </button>
+
+    </div>
+
+</div>        
+
+<!-- =====================================
+PROFILE GRID
+===================================== -->
+
+<div class="profile-grid">
+
+    <!-- PERSONAL INFORMATION -->
+
+    <div class="profile-card">
+
+        <h2>
+
+            <i data-lucide="user"></i>
+
+            Personal Information
+
+        </h2>
+
+        <div class="info-grid">
+
+            <div class="info-item">
+
+                <label>Full Name</label>
+
+                <span>Hamza Ibrahim</span>
+
+            </div>
+
+            <div class="info-item">
+
+                <label>Gender</label>
+
+                <span>Male</span>
+
+            </div>
+
+            <div class="info-item">
+
+                <label>Date of Birth</label>
+
+                <span>15 June 2005</span>
+
+            </div>
+
+            <div class="info-item">
+
+                <label>Age</label>
+
+                <span>21 Years</span>
+
+            </div>
+
+            <div class="info-item">
+
+                <label>Phone</label>
+
+                <span>08169640058</span>
+
+            </div>
+
+            <div class="info-item">
+
+                <label>Email</label>
+
+                <span>hamzaibrahi6964@gmail.com</span>
+
+            </div>
+
+            <div class="info-item full-width">
+
+                <label>Address</label>
+
+                <span>Kaduna, Nigeria</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+      <!-- MEDICAL INFORMATION -->
+
+    <div class="profile-card">
+
+        <h2>
+
+            <i data-lucide="heart-pulse"></i>
+
+            Medical Information
+
+        </h2>
+
+        <div class="info-grid">
+
+            <div class="info-item">
+
+                <label>Blood Group</label>
+
+                <span>AB-</span>
+
+            </div>
+
+            <div class="info-item">
+
+                <label>Genotype</label>
+
+                <span>AA</span>
+
+            </div>
+
+            <div class="info-item">
+
+                <label>Department</label>
+
+                <span>Cardiology</span>
+
+            </div>
+
+            <div class="info-item">
+
+                <label>Assigned Doctor</label>
+
+                <span>Dr. Sarah Johnson</span>
+
+            </div>
+
+            <div class="info-item">
+
+                <label>Height</label>
+
+                <span>175 cm</span>
+
+            </div>
+
+            <div class="info-item">
+
+                <label>Weight</label>
+
+                <span>70 kg</span>
+
+            </div>
+
+            <div class="info-item full-width">
+
+                <label>Allergies</label>
+
+                <span>None</span>
+
+            </div>
+
+            <div class="info-item full-width">
+
+                <label>Medical History</label>
+
+                <span>No previous major illnesses.</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =====================================
+SECOND ROW
+===================================== -->
+
+<div class="profile-grid">
+
+    <!-- EMERGENCY CONTACT -->
+
+    <div class="profile-card">
+
+        <h2>
+
+            <i data-lucide="phone-call"></i>
+
+            Emergency Contact
+
+        </h2>
+
+        <div class="info-grid">
+
+            <div class="info-item">
+
+                <label>Name</label>
+
+                <span>Ibrahim Ahmed</span>
+
+            </div>
+
+            <div class="info-item">
+
+                <label>Relationship</label>
+
+                <span>Father</span>
+
+            </div>
+
+            <div class="info-item">
+
+                <label>Phone</label>
+
+                <span>09030240152</span>
+
+            </div>
+
+            <div class="info-item">
+
+                <label>Address</label>
+
+                <span>Kaduna, Nigeria</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RECENT APPOINTMENTS -->
+
+    <div class="profile-card">
+
+        <h2>
+
+            <i data-lucide="calendar-days"></i>
+
+            Recent Appointments
+
+        </h2>
+
+        <div class="appointment-list">
+
+            <div class="appointment-item">
+
+                <strong>12 June 2026</strong>
+
+                <p>Cardiology Consultation</p>
+
+            </div>
+
+            <div class="appointment-item">
+
+                <strong>20 June 2026</strong>
+
+                <p>Laboratory Test</p>
+
+            </div>
+
+            <div class="appointment-item">
+
+                <strong>28 June 2026</strong>
+
+                <p>Routine Checkup</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =====================================
+THIRD ROW
+===================================== -->
+
+<div class="profile-grid">
+
+    <!-- BILLING SUMMARY -->
+
+    <div class="profile-card">
+
+        <h2>
+
+            <i data-lucide="wallet"></i>
+
+            Billing Summary
+
+        </h2>
+
+        <div class="billing-item">
+
+            <span>Consultation</span>
+
+            <strong>₦10,000</strong>
+
+        </div>
+
+        <div class="billing-item">
+
+            <span>Laboratory</span>
+
+            <strong>₦5,000</strong>
+
+        </div>
+
+        <div class="billing-item">
+
+            <span>Pharmacy</span>
+
+            <strong>₦7,500</strong>
+
+        </div>
+
+        <hr>
+
+        <div class="billing-item total">
+
+            <span>Total Paid</span>
+
+            <strong>₦22,500</strong>
+
+        </div>
+
+    </div>
+
+    <!-- CURRENT MEDICATION -->
+
+    <div class="profile-card">
+
+        <h2>
+
+            <i data-lucide="pill"></i>
+
+            Current Medication
+
+        </h2>
+
+        <ul class="medicine-list">
+
+            <li>Amoxicillin 500mg</li>
+
+            <li>Vitamin C Tablets</li>
+
+            <li>Paracetamol 500mg</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+<!-- LAB RESULTS -->
+
+<div class="profile-card">
+
+    <h2>
+
+        <i data-lucide="flask-conical"></i>
+
+        Laboratory Results
+
+    </h2>
+
+    <table class="patients-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Date</th>
+
+                <th>Test</th>
+
+                <th>Result</th>
+
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td>12 Jun 2026</td>
+
+                <td>Blood Test</td>
+
+                <td>Normal</td>
+
+                <td>
+                    <span class="status admitted">
+                        Completed
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>20 Jun 2026</td>
+
+                <td>Urine Test</td>
+
+                <td>Normal</td>
+
+                <td>
+                    <span class="status admitted">
+                        Completed
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>27 Jun 2026</td>
+
+                <td>X-Ray</td>
+
+                <td>Normal</td>
+
+                <td>
+                    <span class="status admitted">
+                        Completed
+                    </span>
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+<script>
+
+lucide.createIcons();
+
+</script>
+
+</body>
+
+</html>          
