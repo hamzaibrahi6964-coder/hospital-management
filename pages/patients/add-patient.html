@@ -25,7 +25,7 @@
 
 <div class="dashboard-container">
 
-    <!-- Sidebar -->
+    <!-- SIDEBAR -->
 
     <aside class="sidebar">
 
@@ -33,7 +33,7 @@
 
             <div class="sidebar-logo">
 
-                <img src="../../assets/icons/logo.svg">
+                <img src="../../assets/icons/logo.svg" alt="Logo">
 
             </div>
 
@@ -65,15 +65,55 @@
 
             </li>
 
+            <li>
+
+                <i data-lucide="stethoscope"></i>
+
+                <span>Doctors</span>
+
+            </li>
+
+            <li>
+
+                <i data-lucide="calendar-days"></i>
+
+                <span>Appointments</span>
+
+            </li>
+
+            <li>
+
+                <i data-lucide="flask-conical"></i>
+
+                <span>Laboratory</span>
+
+            </li>
+
+            <li>
+
+                <i data-lucide="pill"></i>
+
+                <span>Pharmacy</span>
+
+            </li>
+
+            <li>
+
+                <i data-lucide="wallet"></i>
+
+                <span>Billing</span>
+
+            </li>
+
         </ul>
 
     </aside>
 
-    <!-- Main -->
+    <!-- MAIN CONTENT -->
 
     <main class="main-content">
 
-        <!-- Topbar -->
+        <!-- TOPBAR -->
 
         <nav class="topbar">
 
@@ -81,24 +121,25 @@
 
                 <h2>Add New Patient</h2>
 
-                <small>Create a new patient record</small>
+                <small>Create a complete patient record</small>
 
             </div>
 
-            <button class="add-btn"
+            <button
+            class="add-btn"
             onclick="window.location.href='patients.html'">
 
-                ← Back
+                ← Back to Patients
 
             </button>
 
         </nav>
 
-        <!-- Progress -->
+        <!-- WIZARD -->
 
         <div class="wizard-progress">
 
-            <div class="step active">
+            <div class="step active" id="indicator1">
 
                 <div class="circle">1</div>
 
@@ -106,7 +147,7 @@
 
             </div>
 
-            <div class="step">
+            <div class="step" id="indicator2">
 
                 <div class="circle">2</div>
 
@@ -114,7 +155,7 @@
 
             </div>
 
-            <div class="step">
+            <div class="step" id="indicator3">
 
                 <div class="circle">3</div>
 
@@ -122,7 +163,7 @@
 
             </div>
 
-            <div class="step">
+            <div class="step" id="indicator4">
 
                 <div class="circle">4</div>
 
@@ -132,48 +173,57 @@
 
         </div>
 
-        <!-- Card -->
+        <!-- FORM CARD -->
 
-       <div class="patient-form-card">
+        <div class="patient-form-card">
 
-    <div class="form-step active" id="step1">
+            <!-- STEP 1 -->
 
-    <h2>Personal Information</h2>
+            <section
+            class="form-step active"
+            id="step1">
 
-    <p>Complete the patient's personal information.</p>
+                <h2>Personal Information</h2>
 
-    <form class="patient-form">
+                <p>
 
-        <!-- PHOTO -->
+                    Complete the patient's personal details.
 
-        <div class="photo-section">
+                </p>
 
-            <div class="photo-box">
+                <form id="patientForm">
 
-              <img
-               src="https://placehold.co/140x140/png"
-                id="photoPreview"
-                 alt="Patient Photo">
+    <!-- PHOTO -->
 
-                <input
-                type="file"
-                id="patientPhoto"
-                accept="image/*">
+    <div class="photo-section">
 
-                <button
-                type="button"
-                class="upload-btn"
-                onclick="document.getElementById('patientPhoto').click();">
+        <div class="photo-box">
 
-                    Upload Photo
+            <img
+            src="https://placehold.co/140x140"
+            id="photoPreview"
+            alt="Patient Photo">
 
-                </button>
+            <input
+            type="file"
+            id="patientPhoto"
+            accept="image/*"
+            hidden>
 
-            </div>
+            <button
+            type="button"
+            class="upload-btn"
+            onclick="document.getElementById('patientPhoto').click()">
+
+                Upload Photo
+
+            </button>
 
         </div>
 
-        <!-- PATIENT ID -->
+    </div>
+
+    <div class="form-grid">
 
         <div class="form-group">
 
@@ -186,19 +236,16 @@
 
         </div>
 
-        <!-- FIRST NAME -->
-
         <div class="form-group">
 
             <label>First Name</label>
 
             <input
             type="text"
-            placeholder="Enter first name">
+            id="firstName"
+            required>
 
         </div>
-
-        <!-- LAST NAME -->
 
         <div class="form-group">
 
@@ -206,19 +253,18 @@
 
             <input
             type="text"
-            placeholder="Enter last name">
+            id="lastName"
+            required>
 
         </div>
-
-        <!-- GENDER -->
 
         <div class="form-group">
 
             <label>Gender</label>
 
-            <select>
+            <select id="gender">
 
-                <option>Select Gender</option>
+                <option value="">Select Gender</option>
 
                 <option>Male</option>
 
@@ -227,8 +273,6 @@
             </select>
 
         </div>
-
-        <!-- DOB -->
 
         <div class="form-group">
 
@@ -239,8 +283,6 @@
             id="dob">
 
         </div>
-
-        <!-- AGE -->
 
         <div class="form-group">
 
@@ -253,102 +295,463 @@
 
         </div>
 
-        <!-- PHONE -->
+        <div class="form-group">
+
+            <label>Phone Number</label>
+
+            <input
+            type="tel"
+            id="phone">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Email Address</label>
+
+            <input
+            type="email"
+            id="email">
+
+        </div>
+
+    </div>
+
+    <div class="form-group full">
+
+        <label>Home Address</label>
+
+        <textarea
+        id="address"
+        rows="4"></textarea>
+
+    </div>
+
+    <div class="form-navigation">
+
+        <button
+        type="button"
+        class="cancel-form-btn"
+        onclick="window.location.href='patients.html'">
+
+            Cancel
+
+        </button>
+
+        <button
+        type="button"
+        class="next-btn"
+        id="next1">
+
+            Next →
+
+        </button>
+
+    </div>
+
+</form>
+
+</section>
+
+<!-- =========================
+STEP 2
+========================= -->
+
+<section class="form-step" id="step2">
+
+    <h2>Medical Information</h2>
+
+    <p>
+        Enter the patient's medical information.
+    </p>
+
+    <div class="form-grid">
+
+        <div class="form-group">
+
+            <label>Blood Group</label>
+
+            <select id="bloodGroup">
+
+                <option value="">Select Blood Group</option>
+
+                <option>A+</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>AB+</option>
+                <option>AB-</option>
+                <option>O+</option>
+                <option>O-</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Genotype</label>
+
+            <select id="genotype">
+
+                <option value="">Select Genotype</option>
+
+                <option>AA</option>
+                <option>AS</option>
+                <option>AC</option>
+                <option>SS</option>
+                <option>SC</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Height (cm)</label>
+
+            <input
+            type="number"
+            id="height">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Weight (kg)</label>
+
+            <input
+            type="number"
+            id="weight">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Department</label>
+
+            <select id="department">
+
+                <option>General Medicine</option>
+                <option>Cardiology</option>
+                <option>Surgery</option>
+                <option>Pediatrics</option>
+                <option>Neurology</option>
+                <option>Orthopedics</option>
+                <option>ENT</option>
+                <option>Laboratory</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Assigned Doctor</label>
+
+            <input
+            type="text"
+            id="doctor"
+            placeholder="Doctor Name">
+
+        </div>
+
+    </div>
+
+    <div class="form-group full">
+
+        <label>Known Allergies</label>
+
+        <textarea
+        id="allergies"
+        rows="3"
+        placeholder="Enter allergies if any..."></textarea>
+
+    </div>
+
+    <div class="form-group full">
+
+        <label>Medical History</label>
+
+        <textarea
+        id="history"
+        rows="5"
+        placeholder="Previous illnesses, surgeries, chronic conditions..."></textarea>
+
+    </div>
+
+    <div class="form-group full">
+
+        <label>Current Medication</label>
+
+        <textarea
+        id="medication"
+        rows="3"
+        placeholder="Current medications..."></textarea>
+
+    </div>
+
+    <div class="form-navigation">
+
+        <button
+        type="button"
+        class="cancel-form-btn"
+        id="back1">
+
+            ← Previous
+
+        </button>
+
+        <button
+        type="button"
+        class="next-btn"
+        id="next2">
+
+            Next →
+
+        </button>
+
+    </div>
+
+</section> 
+
+<!-- =========================
+STEP 3
+========================= -->
+
+<section class="form-step" id="step3">
+
+    <h2>Emergency Contact</h2>
+
+    <p>
+        Enter the patient's emergency contact information.
+    </p>
+
+    <div class="form-grid">
+
+        <div class="form-group">
+
+            <label>Emergency Contact Name</label>
+
+            <input
+            type="text"
+            id="emergencyName"
+            placeholder="Full Name">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Relationship</label>
+
+            <select id="relationship">
+
+                <option>Select Relationship</option>
+
+                <option>Father</option>
+                <option>Mother</option>
+                <option>Brother</option>
+                <option>Sister</option>
+                <option>Husband</option>
+                <option>Wife</option>
+                <option>Guardian</option>
+                <option>Friend</option>
+
+            </select>
+
+        </div>
 
         <div class="form-group">
 
             <label>Phone Number</label>
 
             <input
-            type="text"
+            type="tel"
+            id="emergencyPhone"
             placeholder="080xxxxxxxx">
 
         </div>
 
-        <!-- EMAIL -->
-
         <div class="form-group">
 
-            <label>Email</label>
+            <label>Alternative Phone</label>
 
             <input
-            type="email"
-            placeholder="patient@email.com">
+            type="tel"
+            id="alternativePhone"
+            placeholder="Optional">
 
         </div>
-
-        <!-- ADDRESS -->
 
         <div class="form-group full">
 
-            <label>Home Address</label>
+            <label>Emergency Address</label>
 
             <textarea
-            placeholder="Enter full home address"></textarea>
+            id="emergencyAddress"
+            rows="3"
+            placeholder="Enter address"></textarea>
 
         </div>
 
-        <!-- BUTTONS -->
+        <div class="form-group">
 
-        <div class="form-navigation">
+            <label>Insurance Provider</label>
 
-            <button
-            type="button"
-            class="cancel-form-btn"
-            onclick="window.location.href='patients.html'">
-
-                Cancel
-
-            </button>  
-
- <button
-type="button"
-class="next-btn"
-id="nextBtn">
-
-    Next →
-
-</button>
+            <input
+            type="text"
+            id="insuranceProvider"
+            placeholder="Insurance Company">
 
         </div>
 
-</form>
+        <div class="form-group">
+
+            <label>Insurance Number</label>
+
+            <input
+            type="text"
+            id="insuranceNumber"
+            placeholder="Policy Number">
+
+        </div>
+
+    </div>
+
+    <div class="form-navigation">
+
+        <button
+        type="button"
+        class="cancel-form-btn"
+        id="back2">
+
+            ← Previous
+
+        </button>
+
+        <button
+        type="button"
+        class="next-btn"
+        id="next3">
+
+            Next →
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- =========================
+STEP 4
+========================= -->
+
+<section class="form-step" id="step4">
+
+    <h2>Review Information</h2>
+
+    <p>
+        Review all patient information before saving.
+    </p>
+
+    <div class="review-card">
+
+        <h3>Personal Information</h3>
+
+        <div class="review-grid">
+
+            <p><strong>Patient ID:</strong> <span id="reviewPatientId"></span></p>
+
+            <p><strong>Full Name:</strong> <span id="reviewName"></span></p>
+
+            <p><strong>Gender:</strong> <span id="reviewGender"></span></p>
+
+            <p><strong>Age:</strong> <span id="reviewAge"></span></p>
+
+            <p><strong>Phone:</strong> <span id="reviewPhone"></span></p>
+
+            <p><strong>Email:</strong> <span id="reviewEmail"></span></p>
+
+        </div>
+
+        <hr>
+
+        <h3>Medical Information</h3>
+
+        <div class="review-grid">
+
+            <p><strong>Blood Group:</strong> <span id="reviewBlood"></span></p>
+
+            <p><strong>Genotype:</strong> <span id="reviewGenotype"></span></p>
+
+            <p><strong>Department:</strong> <span id="reviewDepartment"></span></p>
+
+            <p><strong>Doctor:</strong> <span id="reviewDoctor"></span></p>
+
+        </div>
+
+        <hr>
+
+        <h3>Emergency Contact</h3>
+
+        <div class="review-grid">
+
+            <p><strong>Name:</strong> <span id="reviewEmergency"></span></p>
+
+            <p><strong>Relationship:</strong> <span id="reviewRelationship"></span></p>
+
+            <p><strong>Phone:</strong> <span id="reviewEmergencyPhone"></span></p>
+
+        </div>
+
+    </div>
+
+    <div class="form-navigation">
+
+        <button
+        type="button"
+        class="cancel-form-btn"
+        id="back3">
+
+            ← Previous
+
+        </button>
+
+        <button
+        type="submit"
+        class="save-btn"
+        id="savePatient">
+
+            Save Patient
+
+        </button>
+
+    </div>
+
+</section>
 
 </div>
 
-<div class="form-step" id="step2">
-
-</div>
-
-<div class="form-step" id="step3">
-
-</div>
-
-<div class="form-step" id="step4">
-
-</div>
+</main>
 
 </div> 
-
-    </main>
-
-</div>
 
 <script>
 
 lucide.createIcons();
 
-/* AUTO PATIENT ID */
+/* ==========================
+   AUTO PATIENT ID
+========================== */
 
 document.getElementById("patientId").value =
-"PAT-" + Math.floor(1000 + Math.random()*9000);
+"PAT-" + Math.floor(1000 + Math.random() * 9000);
 
-/* PHOTO PREVIEW */
+/* ==========================
+   PHOTO PREVIEW
+========================== */
 
-const patientPhoto =
-document.getElementById("patientPhoto");
-
-patientPhoto.addEventListener("change",function(e){
+document.getElementById("patientPhoto").addEventListener("change", function(e){
 
     const file = e.target.files[0];
 
@@ -356,12 +759,12 @@ patientPhoto.addEventListener("change",function(e){
 
         const reader = new FileReader();
 
-        reader.onload=function(event){
+        reader.onload = function(event){
 
             document.getElementById("photoPreview").src =
             event.target.result;
 
-        }
+        };
 
         reader.readAsDataURL(file);
 
@@ -369,24 +772,19 @@ patientPhoto.addEventListener("change",function(e){
 
 });
 
-/* AUTO AGE */
+/* ==========================
+   AUTO AGE
+========================== */
 
-const dob =
-document.getElementById("dob");
+document.getElementById("dob").addEventListener("change", function(){
 
-dob.addEventListener("change",function(){
+    const birth = new Date(this.value);
 
-    const birth =
-    new Date(this.value);
+    const today = new Date();
 
-    const today =
-    new Date();
+    let age = today.getFullYear() - birth.getFullYear();
 
-    let age =
-    today.getFullYear() - birth.getFullYear();
-
-    const month =
-    today.getMonth() - birth.getMonth();
+    const month = today.getMonth() - birth.getMonth();
 
     if(month < 0 || (month === 0 && today.getDate() < birth.getDate())){
 
@@ -397,20 +795,138 @@ dob.addEventListener("change",function(){
     document.getElementById("age").value = age;
 
 });
-    
-/* ===========================
-   NEXT BUTTON
-=========================== */
 
-const nextBtn = document.getElementById("nextBtn");
+/* ==========================
+   STEPS
+========================== */
 
-nextBtn.onclick = function () {
+const steps = [
 
-    alert("Button clicked");
+document.getElementById("step1"),
 
-    document.getElementById("step1").classList.remove("active");
+document.getElementById("step2"),
 
-    document.getElementById("step2").classList.add("active");
+document.getElementById("step3"),
+
+document.getElementById("step4")
+
+];
+
+const indicators = [
+
+document.getElementById("indicator1"),
+
+document.getElementById("indicator2"),
+
+document.getElementById("indicator3"),
+
+document.getElementById("indicator4")
+
+];
+
+function showStep(number){
+
+    steps.forEach(step=>step.classList.remove("active"));
+
+    indicators.forEach(item=>item.classList.remove("active"));
+
+    steps[number-1].classList.add("active");
+
+    indicators[number-1].classList.add("active");
+
+}
+
+/* NEXT */
+
+document.getElementById("next1").onclick=function(){
+
+    showStep(2);
+
+};
+
+document.getElementById("next2").onclick=function(){
+
+    showStep(3);
+
+};
+
+document.getElementById("next3").onclick=function(){
+
+    /* REVIEW */
+
+    document.getElementById("reviewPatientId").textContent =
+    document.getElementById("patientId").value;
+
+    document.getElementById("reviewName").textContent =
+    document.getElementById("firstName").value + " " +
+    document.getElementById("lastName").value;
+
+    document.getElementById("reviewGender").textContent =
+    document.getElementById("gender").value;
+
+    document.getElementById("reviewAge").textContent =
+    document.getElementById("age").value;
+
+    document.getElementById("reviewPhone").textContent =
+    document.getElementById("phone").value;
+
+    document.getElementById("reviewEmail").textContent =
+    document.getElementById("email").value;
+
+    document.getElementById("reviewBlood").textContent =
+    document.getElementById("bloodGroup").value;
+
+    document.getElementById("reviewGenotype").textContent =
+    document.getElementById("genotype").value;
+
+    document.getElementById("reviewDepartment").textContent =
+    document.getElementById("department").value;
+
+    document.getElementById("reviewDoctor").textContent =
+    document.getElementById("doctor").value;
+
+    document.getElementById("reviewEmergency").textContent =
+    document.getElementById("emergencyName").value;
+
+    document.getElementById("reviewRelationship").textContent =
+    document.getElementById("relationship").value;
+
+    document.getElementById("reviewEmergencyPhone").textContent =
+    document.getElementById("emergencyPhone").value;
+
+    showStep(4);
+
+};
+
+/* BACK */
+
+document.getElementById("back1").onclick=function(){
+
+    showStep(1);
+
+};
+
+document.getElementById("back2").onclick=function(){
+
+    showStep(2);
+
+};
+
+document.getElementById("back3").onclick=function(){
+
+    showStep(3);
+
+};
+
+/* SAVE */
+
+document.getElementById("savePatient").onclick=function(e){
+
+    e.preventDefault();
+
+    alert("Patient Saved Successfully!");
+
+    window.location.href="patients.html";
 
 };
 
@@ -418,4 +934,4 @@ nextBtn.onclick = function () {
 
 </body>
 
-</html>
+</html>    
