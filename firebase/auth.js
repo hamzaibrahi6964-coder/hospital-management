@@ -26,3 +26,17 @@ export async function loginUser(email, password) {
     }
 
 }
+
+export async function logoutUser() {
+
+    try {
+
+        await signOut(auth);
+
+    } catch (error) {
+
+        throw error;
+
+    }
+
+}
