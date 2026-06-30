@@ -149,8 +149,12 @@ src="https://unpkg.com/lucide@latest">
 
 </div>
 
-<script>
+<script type="module">
 
+import { loginUser } from "./firebase/auth.js";
+
+console.log("auth.js loaded successfully");
+    
 lucide.createIcons();
 
 const loginForm =
