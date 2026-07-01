@@ -1,1 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Hospital Management | MediCare Pro</title>
+
+<link rel="stylesheet"
+href="../../assets/css/platform/hospitals.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ==========================
+         SIDEBAR
+    =========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>MediCare Pro</h2>
+
+            <span>Platform</span>
+
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="super-admin.html">
+                    <i data-lucide="layout-dashboard"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="#">
+                    <i data-lucide="building-2"></i>
+                    Hospitals
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i data-lucide="credit-card"></i>
+                    Subscriptions
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i data-lucide="bar-chart-3"></i>
+                    Analytics
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i data-lucide="settings"></i>
+                    Settings
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- ==========================
+         MAIN CONTENT
+    =========================== -->
+
+    <main class="content">
+
+<!-- ==========================
+     PAGE HEADER
+========================== -->
+
+<header class="page-header">
+
+    <div>
+
+        <h1>Hospital Management</h1>
+
+        <p>
+            Manage all hospitals across the MediCare Pro platform.
+        </p>
+
+    </div>
+
+    <div class="header-actions">
+
+        <button class="notification-btn">
+
+            <i data-lucide="bell"></i>
+
+            <span class="notification-dot"></span>
+
+        </button>
+
+        <div class="admin-profile">
+
+            <div class="admin-avatar">
+
+                HI
+
+            </div>
+
+            <div>
+
+                <h4 id="adminName">
+                    Loading...
+                </h4>
+
+                <span>
+                    Super Administrator
+                </span>
+
+            </div>
+
+        </div>
+
+        <button
+        class="add-hospital-btn"
+        id="addHospitalBtn">
+
+            <i data-lucide="plus"></i>
+
+            Add Hospital
+
+        </button>
+
+    </div>
+
+</header>  
+
+<!-- ==========================
+     DASHBOARD CARDS
+========================== -->
+
+<section class="stats-grid">
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+
+            <i data-lucide="building-2"></i>
+
+        </div>
+
+        <div>
+
+            <h3 id="totalHospitals">
+                0
+            </h3>
+
+            <p>Total Hospitals</p>
+
+        </div>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+
+            <i data-lucide="git-branch"></i>
+
+        </div>
+
+        <div>
+
+            <h3 id="totalBranches">
+                0
+            </h3>
+
+            <p>Total Branches</p>
+
+        </div>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+
+            <i data-lucide="users"></i>
+
+        </div>
+
+        <div>
+
+            <h3 id="totalAdmins">
+                0
+            </h3>
+
+            <p>Hospital Admins</p>
+
+        </div>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+
+            <i data-lucide="activity"></i>
+
+        </div>
+
+        <div>
+
+            <h3 id="activeHospitals">
+                0
+            </h3>
+
+            <p>Active Hospitals</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     SEARCH & FILTERS
+========================== -->
+
+<section class="toolbar">
+
+    <div class="search-box">
+
+        <i data-lucide="search"></i>
+
+        <input
+        type="text"
+        id="searchHospital"
+        placeholder="Search hospitals...">
+
+    </div>
+
+    <div class="toolbar-actions">
+
+        <select id="statusFilter">
+
+            <option value="">All Status</option>
+            <option value="active">Active</option>
+            <option value="suspended">Suspended</option>
+
+        </select>
+
+        <select id="planFilter">
+
+            <option value="">All Plans</option>
+            <option>Basic</option>
+            <option>Professional</option>
+            <option>Enterprise</option>
+
+        </select>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     HOSPITAL TABLE
+========================== -->
+
+<section class="table-card">
+
+    <div class="table-header">
+
+        <h2>Hospitals</h2>
+
+        <span id="hospitalCount">
+            0 Hospitals
+        </span>
+
+    </div>
+
+    <div class="table-responsive">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Hospital</th>
+
+                    <th>Code</th>
+
+                    <th>Branches</th>
+
+                    <th>Administrator</th>
+
+                    <th>Plan</th>
+
+                    <th>Status</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="hospitalTableBody">
+
+                <!-- Firebase will load hospitals here -->
+
+                <tr>
+
+                    <td colspan="7" class="empty-state">
+
+                        No hospitals found.
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section> 
+
+          </main>
+
+</div>
+
+<script
+type="module"
+src="../../assets/js/platform/hospitals.js">
+</script>
+
+</body>
+</html>
+      
+      
